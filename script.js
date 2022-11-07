@@ -4,8 +4,8 @@ $(function() {
   $(".pic").draggable({
     containment: "body",
     scroll: false
-  }).on("pointerdown", function() {
-    $(this).css("z-index", curZindex + 1).children().addClass("grabbed").pointerup(function() {
+  }).on("touchstart", function() {
+    $(this).css("z-index", curZindex + 1).children().addClass("grabbed").touchstart(function() {
       $(this).removeClass("grabbed");
     });
     curZindex++;
@@ -14,7 +14,7 @@ $(function() {
   shuffle();
   dropSet();
 
-  $(".puzzlify").on("touchstart click", function() {
+  $(".puzzlify").on("touchstart", function() {
     if ($("input").val() != "")
     puzzlify();
   });
