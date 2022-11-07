@@ -14,7 +14,7 @@ $(function() {
   shuffle();
   dropSet();
 
-  $(".puzzlify").on("click", function() {
+  $(".puzzlify").on("touchstart click", function() {
     if ($("input").val() != "")
     puzzlify();
   });
